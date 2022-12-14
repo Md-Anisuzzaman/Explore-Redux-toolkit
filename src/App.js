@@ -1,19 +1,21 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import Hello from "./components/Hello";
 import Orders from "./components/Orders";
 
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="/orders" element={<Orders />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      <Dashboard />
+      <Routes>
+        <Route path="/" element={<Dashboard />}>
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/hello" element={<Hello />} />
+
+        </Route>
+
+      </Routes>
+      {/* <Dashboard /> */}
     </div>
   );
 };

@@ -1,19 +1,15 @@
 import React from "react";
-import Header from "../components/Header";
-import LeftSidebar from "../components/LeftSidebar";
-import RightSidebar from "../components/RightSidebar";
-
+import LeftSideBar from "../BackEnd/Sidebar/LeftSidebar"
+import Header from "../BackEnd/Header/Header"
 
 const FrontEndLayout = () => {
   return (
     <>
       <div id="main-wrapper">
-        <Header></Header>
-        <LeftSidebar></LeftSidebar>
-        {/* <RightSidebar></RightSidebar> */}
+       <Header></Header>
+        <LeftSideBar></LeftSideBar>
         <div className="page-wrapper">
-
-          <main  style={{height:"100vh"}}>
+          <main style={{ height: "100vh" }}>
             <div className="container-fluid">
               <div className="row">
                 <div className="col-12">

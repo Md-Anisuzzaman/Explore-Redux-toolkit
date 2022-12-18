@@ -1,5 +1,5 @@
 import React from 'react'
-import  Side_Navbar_Header  from './Side_Navbar_Header'
+import  Side_Navbar_Header  from '../Sidebar/Side_Navbar_Header'
 import Navbar from './Navbar'
 const Header = () => {
     return (

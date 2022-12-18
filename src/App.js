@@ -1,9 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import Hello from "./components/Hello";
-import Orders from "./components/Orders";
-import FrontEndLayout from "./Layouts/FrontEndLayout";
+import FrontEndLayout from "./Pages/Layouts/FrontEndLayout";
+
 
 const App = () => {
   return (

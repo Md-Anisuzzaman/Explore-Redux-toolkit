@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import FrontEndLayout from "./Pages/Layouts/FrontEndLayout";
+import Login from "./Pages/Auth/Login";
+import Register from "./Pages/Auth/Register";
+// import FrontEndLayout from "./Pages/Layouts/FrontEndLayout";
 
 
 const App = () => {
@@ -11,9 +13,12 @@ const App = () => {
           <Route path="/orders" element={<Orders />} />
           <Route path="/hello" element={<Hello />} />
         </Route> */}
+        <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />} />
       </Routes>
-      <FrontEndLayout></FrontEndLayout>
+      {/* <FrontEndLayout></FrontEndLayout> */}
       {/* <Dashboard /> */}
+      {/* <Login></Login> */}
     </div>
   );
 };

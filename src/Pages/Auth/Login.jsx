@@ -1,19 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-const Login = () => {
 
-    
+const Login = ({ handleLogin }) => {
+
     return (
         <>
             <div className="form-body">
-                <div className="website-logo">
-                    <a href="index.html">
-                        <div className="logo">
-                            <img className="logo-size" src="images/logo-light.svg" alt="" />
-                        </div>
-                    </a>
-                </div>
                 <div className="row">
                     <div className="img-holder">
                         <div className="bg" />
@@ -28,17 +20,11 @@ const Login = () => {
                                 <div className="page-links">
                                     <Link to="/login" className="active">Login</Link><Link to="/register">Register</Link>
                                 </div>
-                                <div className="alert alert-warning alert-dismissible fade show with-icon" role="alert">
-                                    Please fill the following form with your information
-                                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
                                 <form>
                                     <input className="form-control" type="text" name="username" placeholder="E-mail Address" required />
                                     <input className="form-control" type="password" name="password" placeholder="Password" required />
                                     <div className="form-button">
-                                        <button id="submit" type="submit" className="ibtn">Login</button> <a href="forget3.html">Forget password?</a>
+                                        <button onClick={handleLogin} id="submit" type="submit" className="ibtn">Login</button> <a href="forget3.html">Forget password?</a>
                                     </div>
                                 </form>
                                 <div className="other-links">

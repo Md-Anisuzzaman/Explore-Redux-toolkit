@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LeftSidebar = () => {
+const LeftSidebar = ({handleLogOut}) => {
     return (
         <>
             <aside className="left-sidebar">
@@ -28,31 +28,23 @@ const LeftSidebar = () => {
                                     Steave Gection <span className="caret" />
                                 </a>
                                 <div className="dropdown-menu animated flipInY">
-                                    {/* text*/}
                                     <a href="javascript:void(0)" className="dropdown-item">
                                         <i className="ti-user" /> My Profile
                                     </a>
-                                    {/* text*/}
                                     <a href="javascript:void(0)" className="dropdown-item">
                                         <i className="ti-wallet" /> My Balance
                                     </a>
-                                    {/* text*/}
                                     <a href="javascript:void(0)" className="dropdown-item">
                                         <i className="ti-email" /> Inbox
                                     </a>
-                                    {/* text*/}
                                     <div className="dropdown-divider" />
-                                    {/* text*/}
                                     <a href="javascript:void(0)" className="dropdown-item">
                                         <i className="ti-settings" /> Account Setting
                                     </a>
-                                    {/* text*/}
                                     <div className="dropdown-divider" />
-                                    {/* text*/}
-                                    <a href="pages-login.html" className="dropdown-item">
+                                    <a onClick={handleLogOut} className="dropdown-item">                                       
                                         <i className="fas fa-power-off" /> Logout
                                     </a>
-                                    {/* text*/}
                                 </div>
                             </div>
                         </div>
@@ -256,9 +248,7 @@ const LeftSidebar = () => {
                             </li>
                         </ul>
                     </nav>
-                    {/* End Sidebar navigation */}
                 </div>
-                {/* End Sidebar scroll*/}
             </aside>
         </>
     );

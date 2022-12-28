@@ -11,7 +11,7 @@ const Hamburger = () => {
           <div className="d-flex justify-content-end align-items-center">
             <ol className="breadcrumb justify-content-end">
               <li className="breadcrumb-item">
-                <a href="javascript:void(0)">Home</a>
+                <a href="#/">Home</a>
               </li>
               <li className="breadcrumb-item active">Blank Page</li>
             </ol>

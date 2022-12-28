@@ -38,7 +38,8 @@ const Register = () => {
                                     <h3>Get more things done with Loggin platform.</h3>
                                     <p>Access to the most powerfull tool in the entire design and web industry.</p>
                                     <div className="page-links">
-                                        <Link to="/login">Login</Link><Link to="/register" className="active">Register</Link>
+                                        <Link to="/login">Login</Link>
+                                        <Link to="/register" className="active">Register</Link>
                                     </div>
                                     <form onSubmit={handleSubmit}>
                                         <input onChange={(e) => setName(e.target.value)} className="form-control" type="text" name="name" placeholder="Full Name" value={name} required />

@@ -1,7 +1,29 @@
+import { useDispatch, useSelector } from 'react-redux'
+import {useEffect} from "react"
 import { Link, useNavigate } from 'react-router-dom'
+import { login, loginAsync, usersAsync } from '../../Features/Auth/authSlice';
 
 
-const Login = ({ handleLogin }) => {
+const Login = () => {
+    const { isLogin } = useSelector((state) => state.auth)
+    console.log("hello", isLogin);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+
+        if (isLogin) {
+            navigate("/dashboard");
+        }
+
+    }, [isLogin])
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        dispatch(loginAsync());
+        dispatch(usersAsync());
+        // navigate("/dashboard");
+    };
 
     return (
         <>
@@ -18,13 +40,14 @@ const Login = ({ handleLogin }) => {
                                 <h3>Get more things done with Loggin platform.</h3>
                                 <p>Access to the most powerfull tool in the entire design and web industry.</p>
                                 <div className="page-links">
-                                    <Link to="/login" className="active">Login</Link><Link to="/register">Register</Link>
+                                    <Link to="/login" className="active">Login</Link>
+                                    <Link to="/register">Register</Link>
                                 </div>
-                                <form>
+                                <form onSubmit={(e) => handleLogin(e)}>
                                     <input className="form-control" type="text" name="username" placeholder="E-mail Address" required />
                                     <input className="form-control" type="password" name="password" placeholder="Password" required />
                                     <div className="form-button">
-                                        <button onClick={handleLogin} id="submit" type="submit" className="ibtn">Login</button> <a href="forget3.html">Forget password?</a>
+                                        <button id="submit" type="submit" className="ibtn">Login</button> <a href="forget3.html">Forget password?</a>
                                     </div>
                                 </form>
                                 <div className="other-links">

@@ -1,10 +1,12 @@
-
 /* body {
     background-color: #fff;
 } */
 
 .form-body {
     background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .website-logo {
@@ -140,17 +142,22 @@
     background-color: #0092FE;
 }
 
-.form-content .page-links a:hover:after, .form-content .page-links a:focus:after {
+.form-content .page-links a:hover:after,
+.form-content .page-links a:focus:after {
     background-color: #0092FE;
 }
 
-.form-content input, .form-content .dropdown-toggle.btn-default {
+.form-content input,
+.form-content .dropdown-toggle.btn-default {
     border: 0;
     background-color: #F7F7F7;
     color: #000;
 }
 
-.form-content input:hover, .form-content input:focus, .form-content .dropdown-toggle.btn-default:hover, .form-content .dropdown-toggle.btn-default:focus {
+.form-content input:hover,
+.form-content input:focus,
+.form-content .dropdown-toggle.btn-default:hover,
+.form-content .dropdown-toggle.btn-default:focus {
     border: 0;
     background-color: #eaeaea;
     color: #000;
@@ -162,7 +169,8 @@
     color: #000;
 }
 
-.form-content textarea:hover, .form-content textarea:focus {
+.form-content textarea:hover,
+.form-content textarea:focus {
     border: 0;
     background-color: #eaeaea;
     color: #000;
@@ -178,45 +186,58 @@
     color: #0093FF;
 }
 
-.form-content .custom-file:hover .custom-file-label, .form-content .custom-file:focus .custom-file-label {
+.form-content .custom-file:hover .custom-file-label,
+.form-content .custom-file:focus .custom-file-label {
     border: 0;
     background-color: #eaeaea;
     color: #000;
 }
 
-.form-content input[type=checkbox]:not(:checked) + label, .form-content input[type=checkbox]:checked + label, .form-content input[type=radio]:not(:checked) + label, .form-content input[type=radio]:checked + label {
+.form-content input[type=checkbox]:not(:checked)+label,
+.form-content input[type=checkbox]:checked+label,
+.form-content input[type=radio]:not(:checked)+label,
+.form-content input[type=radio]:checked+label {
     color: #000;
     font-weight: 700;
 }
 
-.form-content input[type=checkbox]:checked + label, .form-content input[type=radio]:checked + label {
+.form-content input[type=checkbox]:checked+label,
+.form-content input[type=radio]:checked+label {
     color: #000;
 }
 
-.form-content input[type=checkbox]:checked + label:before, .form-content input[type=radio]:checked + label:before {
+.form-content input[type=checkbox]:checked+label:before,
+.form-content input[type=radio]:checked+label:before {
     background: #000;
     border: 0px solid #000;
 }
 
-.form-content input[type=checkbox]:not(:checked) + label:before, .form-content input[type=radio]:not(:checked) + label:before {
+.form-content input[type=checkbox]:not(:checked)+label:before,
+.form-content input[type=radio]:not(:checked)+label:before {
     background: transparent;
     border: 2px solid #000;
 }
 
-.form-content input[type=checkbox]:not(:checked) + label:after, .form-content input[type=checkbox]:checked + label:after {
+.form-content input[type=checkbox]:not(:checked)+label:after,
+.form-content input[type=checkbox]:checked+label:after {
     color: #fff;
 }
 
-.form-content input[type=radio]:not(:checked) + label:after, .form-content input[type=radio]:checked + label:after {
+.form-content input[type=radio]:not(:checked)+label:after,
+.form-content input[type=radio]:checked+label:after {
     background-color: #fff;
 }
 
-.form-content .custom-options input[type=checkbox]:not(:checked) + label, .form-content .custom-options input[type=checkbox]:checked + label, .form-content .custom-options input[type=radio]:not(:checked) + label, .form-content .custom-options input[type=radio]:checked + label {
+.form-content .custom-options input[type=checkbox]:not(:checked)+label,
+.form-content .custom-options input[type=checkbox]:checked+label,
+.form-content .custom-options input[type=radio]:not(:checked)+label,
+.form-content .custom-options input[type=radio]:checked+label {
     color: #606060;
     background-color: #F7F7F7;
 }
 
-.form-content .custom-options input[type=checkbox]:checked + label, .form-content .custom-options input[type=radio]:checked + label {
+.form-content .custom-options input[type=checkbox]:checked+label,
+.form-content .custom-options input[type=radio]:checked+label {
     color: #fff;
     background-color: #57D38C;
     -webkit-box-shadow: 0 3px 8px rgba(74, 230, 142, 0.35);
@@ -230,7 +251,8 @@
     box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
 }
 
-.form-content .form-button .ibtn:hover, .form-content .form-button .ibtn:focus {
+.form-content .form-button .ibtn:hover,
+.form-content .form-button .ibtn:focus {
     background-color: #0093FF;
     color: #fff;
     -webkit-box-shadow: 0 5px 6px rgba(80, 182, 255, 0.31);
@@ -408,7 +430,8 @@
     color: #525557;
 }
 
-.alert a, .alert a.alert-link {
+.alert a,
+.alert a.alert-link {
     color: #000;
 }
 
@@ -470,17 +493,22 @@
     background-color: #0092FE;
 }
 
-.form-body.without-side .form-content .page-links a:hover:after, .form-body.without-side .form-content .page-links a:focus:after {
+.form-body.without-side .form-content .page-links a:hover:after,
+.form-body.without-side .form-content .page-links a:focus:after {
     background-color: #0092FE;
 }
 
-.form-body.without-side .form-content input, .form-body.without-side .form-content .dropdown-toggle.btn-default {
+.form-body.without-side .form-content input,
+.form-body.without-side .form-content .dropdown-toggle.btn-default {
     border: 0;
     background-color: #F7F7F7;
     color: #000;
 }
 
-.form-body.without-side .form-content input:hover, .form-body.without-side .form-content input:focus, .form-body.without-side .form-content .dropdown-toggle.btn-default:hover, .form-body.without-side .form-content .dropdown-toggle.btn-default:focus {
+.form-body.without-side .form-content input:hover,
+.form-body.without-side .form-content input:focus,
+.form-body.without-side .form-content .dropdown-toggle.btn-default:hover,
+.form-body.without-side .form-content .dropdown-toggle.btn-default:focus {
     border: 0;
     background-color: #F7F7F7;
     color: #000;
@@ -493,7 +521,8 @@
     box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
 }
 
-.form-body.without-side .form-content .form-button .ibtn:hover, .form-body.without-side .form-content .form-button .ibtn:focus {
+.form-body.without-side .form-content .form-button .ibtn:hover,
+.form-body.without-side .form-content .form-button .ibtn:focus {
     -webkit-box-shadow: 0 5px 6px rgba(80, 182, 255, 0.31);
     box-shadow: 0 5px 6px rgba(80, 182, 255, 0.31);
 }

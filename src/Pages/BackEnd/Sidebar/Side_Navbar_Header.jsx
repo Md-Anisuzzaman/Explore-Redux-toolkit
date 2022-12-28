@@ -7,25 +7,25 @@ export const Side_Navbar_Header = () => {
                 <a className="navbar-brand" href="index.html">
                     <b>
                         <img
-                            src="../assets/images/logo-icon.png"
+                            src="/assets/images/logo-icon.png"
                             alt="homepage"
                             className="dark-logo"
                         />
                         <img
-                            src="../assets/images/logo-light-icon.png"
+                            src="/assets/images/logo-light-icon.png"
                             alt="homepage"
                             className="light-logo"
                         />
                     </b>
                     <span>
                         <img
-                            src="../assets/images/logo-text.png"
+                            src="/assets/images/logo-text.png"
                             alt="homepage"
                             className="dark-logo"
                         />
                         {/* Light Logo text */}
                         <img
-                            src="../assets/images/logo-light-text.png"
+                            src="/assets/images/logo-light-text.png"
                             className="light-logo"
                             alt="homepage"
                         />

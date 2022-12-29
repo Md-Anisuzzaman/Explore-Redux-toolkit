@@ -6,7 +6,7 @@ import { Outlet } from "react-router";
 const BackEndLayout = () => {
   return (
     <>
-      <div id="main-wrapper">
+      <div id="main-wrapper ">
        <Header></Header>
         <LeftSideBar></LeftSideBar>
         <div className="page-wrapper">

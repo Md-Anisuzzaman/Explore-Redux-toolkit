@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export const Side_Navbar_Header = () => {
+export const SideNavbarHeader = () => {
     return (
         <>
             <div className="navbar-header">
-                <a className="navbar-brand" href="index.html">
+                <Link className="navbar-brand" href="index.html">
                     <b>
                         <img
                             src="/assets/images/logo-icon.png"
@@ -30,9 +31,9 @@ export const Side_Navbar_Header = () => {
                             alt="homepage"
                         />
                     </span>
-                </a>
+                </Link>
             </div>
         </>
     );
 };
-export default Side_Navbar_Header;
+export default SideNavbarHeader;

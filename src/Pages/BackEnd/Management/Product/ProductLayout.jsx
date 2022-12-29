@@ -1,13 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 
-const UserLayout = () => {
+const ProductLayout = () => {
   return (
     <div>
-        <h1>User Management</h1>
+        <h1 className='text-center p-2'>Product Management</h1>
         <Outlet></Outlet>
     </div>
   )
 }
 
-export default UserLayout
+export default ProductLayout;

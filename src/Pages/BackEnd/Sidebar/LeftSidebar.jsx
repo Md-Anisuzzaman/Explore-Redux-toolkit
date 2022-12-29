@@ -65,13 +65,15 @@ const LeftSidebar = () => {
                                     className="has-arrow waves-effect waves-dark"
                                     href="#/"
                                 >
-                                    <i className="icon-speedometer" />
-                                    <span className="hide-menu">
-                                        USer MAnagement
-                                        <span className="badge rounded-pill bg-cyan ms-auto">
-                                            4
+                                    <div>
+                                        <i className="far fa-circle" />
+                                        <span className="hide-menu">
+                                            User Management
+                                            <span className="badge rounded-pill bg-cyan ms-auto">
+                                                4
+                                            </span>
                                         </span>
-                                    </span>
+                                    </div>
                                 </a>
                                 <ul className="collapse">
                                     <li>
@@ -85,6 +87,38 @@ const LeftSidebar = () => {
                                     </li>
                                     <li>
                                         <Link to="/dashboard/user/details">Details </Link>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a
+                                    onClick={(e) => toggleShow(e)}
+                                    className="has-arrow waves-effect waves-dark"
+                                    href="#/"
+                                >
+                                    <div>
+                                        <i className="far fa-circle" />
+                                        <span className="hide-menu">
+                                           Product Management
+                                            <span className="badge rounded-pill bg-cyan ms-auto">
+                                                4
+                                            </span>
+                                        </span>
+                                    </div>
+                                </a>
+                                <ul className="collapse">
+                                    <li>
+                                        <Link to="/dashboard/product">All Product</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/dashboard/product/create">Product Create </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/dashboard/product/edit">Product Edit</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/dashboard/product/details">Product Details </Link>
                                     </li>
                                 </ul>
                             </li>

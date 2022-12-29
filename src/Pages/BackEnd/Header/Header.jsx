@@ -1,12 +1,12 @@
 import React from 'react'
-import  Side_Navbar_Header  from '../Sidebar/Side_Navbar_Header'
+import { SideNavbarHeader }  from '../Sidebar/SideNavbarHeader'
 import Navbar from './Navbar'
 const Header = () => {
     return (
         <>
             <header className="topbar">
                 <nav className="navbar top-navbar navbar-expand-md navbar-dark">
-                    <Side_Navbar_Header></Side_Navbar_Header>
+                    <SideNavbarHeader></SideNavbarHeader>
                     <Navbar></Navbar>
                 </nav>
             </header>

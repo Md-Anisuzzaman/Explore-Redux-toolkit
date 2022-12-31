@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUsers, removeUser } from '../../../../Features/Auth/userslice';
 
 const All = () => {
+  const { users } = useSelector((state) => state.users);
+  console.log(users)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch])
+
+  const deleteuser = () => {
+    dispatch(removeUser());
+  }
   return (
     <div className='container'>
       <div className="card">
@@ -9,7 +22,7 @@ const All = () => {
         </div>
         <div className="card-body">
           <div className="table">
-            <table class="table">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">ID</th>
@@ -19,20 +32,27 @@ const All = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>7</td>
-                  <td>Kylian Mbappe</td>
-                  <td>bpp@gmail.com</td>
-                  <td>
-                    <button className='btn btn-outline-danger me-2'>Delete</button>
-                    <button className='btn btn-outline-warning'>Edit</button>
-                  </td>
-                </tr>
+                {
+                  users.map(user => (
+                    <tr key={user.id}>
+                      <td>{user.id}</td>
+                      <td>{user.name}</td>
+                      <td>${user.email}</td>
+                      <td>
+                        <button onClick={deleteuser} className='btn btn-outline-danger me-2'>Delete</button>
+                        <button className='btn btn-outline-warning'>Edit</button>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
+      {/* <h2>Hello</h2>
+      {users.map((user) => {
+        return <div> {user.name} </div>
+      })} */}
     </div>
   )
 }

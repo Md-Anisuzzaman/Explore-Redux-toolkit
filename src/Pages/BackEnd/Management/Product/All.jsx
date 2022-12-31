@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { getproducts } from '../../../../Features/Auth/productSlice';
 
 const All = () => {
+  const { products } = useSelector((state) => state.products);
+  console.log(products )
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getproducts());
+  }, [dispatch])
   return (
     <div className='container'>
       <div className="card">
@@ -31,6 +40,7 @@ const All = () => {
           </div>
         </div>
       </div>
+      <h3>hello</h3>
     </div>
   )
 }

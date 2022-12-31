@@ -38447,3 +38447,17 @@ code {
 .dp-off {
     background-color: #4c5667 !important
 }
+
+
+.sidebar-nav::-webkit-scrollbar {
+    width: 3px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+    background-color: #ab8ce4;
+    border-radius: 3px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+
+}

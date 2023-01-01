@@ -118,6 +118,9 @@ const LeftSidebar = () => {
                                         <Link to="/dashboard/product/edit">Product Edit</Link>
                                     </li>
                                     <li>
+                                        <Link to="/dashboard/product/addproduct">AddProduct</Link>
+                                    </li>
+                                    <li>
                                         <Link to="/dashboard/product/details">Product Details </Link>
                                     </li>
                                 </ul>

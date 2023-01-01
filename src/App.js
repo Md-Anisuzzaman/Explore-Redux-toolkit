@@ -3,7 +3,7 @@ import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
 import Dashboard from "./Pages/BackEnd/Dashboard";
 import ProductLayout from "./Pages/BackEnd/Management/Product/ProductLayout";
-import { ProductAll, ProductCreate, ProductUpdate } from "./Pages/BackEnd/Management/Product/ProductPageList";
+import { ProductAdd, ProductAll, ProductCreate, ProductDetails, ProductUpdate } from "./Pages/BackEnd/Management/Product/ProductPageList";
 import UserLayout from "./Pages/BackEnd/Management/User/UserLayout";
 import { UserAll, UserCreate, UserDetails, UserUpdate } from "./Pages/BackEnd/Management/User/UserPageLists";
 import BackEndLayout from "./Pages/Layouts/BackEndLayout";
@@ -33,7 +33,8 @@ const App = () => {
             <Route index element={<ProductAll />} />
             <Route path="create" element={<ProductCreate />} />
             <Route path="edit" element={<ProductUpdate/>} />
-            <Route path="details" element={<UserDetails />} />
+            <Route path="details" element={<ProductDetails />} />
+            <Route path="addproduct" element={<ProductAdd />} />
           </Route>
         </Route>
       </Routes>

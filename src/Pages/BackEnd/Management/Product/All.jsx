@@ -4,7 +4,7 @@ import { getproducts } from '../../../../Features/Auth/productSlice';
 
 const All = () => {
   const { products } = useSelector((state) => state.products);
-  console.log(products )
+  // console.log(products)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,30 +18,34 @@ const All = () => {
         </div>
         <div className="card-body">
           <div className="table">
-            <table class="table">
+            <table className="table">
               <thead>
                 <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Amount</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Price</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Jacket</td>
-                  <td>2</td>
-                  <td>$100</td>
-                  <button className='btn btn-outline-danger me-2'>Delete</button>
-                  <button className='btn btn-outline-warning'>Edit</button>
-                </tr>
+                {
+                  products.map(product => (
+                    < tr key={product._id}>
+                      <td> {product._id}</td>
+                      <td>{product.model}</td>
+                      <td>{product.price}</td>
+                      <button className='btn btn-outline-danger me-2'>Delete</button>
+                      <button className='btn btn-outline-success me-2'>Edit</button>
+                      {/* <button className='btn btn-outline-warning me-2'>Edit</button>
+                      <button className='btn btn-outline-warning me-2'>Edit</button> */}
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <h3>hello</h3>
-    </div>
+    </div >
   )
 }
 

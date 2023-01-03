@@ -1,20 +1,28 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getproducts } from '../../../../Features/Auth/productSlice';
+import { deleteProduct, getproducts } from '../../../../Features/Auth/productSlice';
 
 const All = () => {
   const { products } = useSelector((state) => state.products);
-  // console.log(products)
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getproducts());
   }, [dispatch])
+
+  const handleDelete = (id) => {
+    dispatch(deleteProduct(id));
+    // dispatch(getproducts());
+
+  };
+
+
+
   return (
     <div className='container'>
       <div className="card">
         <div className="card-header">
-          <h3>All User</h3>
+          <h3>All Product</h3>
         </div>
         <div className="card-body">
           <div className="table">
@@ -34,10 +42,8 @@ const All = () => {
                       <td> {product._id}</td>
                       <td>{product.model}</td>
                       <td>{product.price}</td>
-                      <button className='btn btn-outline-danger me-2'>Delete</button>
-                      <button className='btn btn-outline-success me-2'>Edit</button>
-                      {/* <button className='btn btn-outline-warning me-2'>Edit</button>
-                      <button className='btn btn-outline-warning me-2'>Edit</button> */}
+                      <button onClick={() => handleDelete(product._id)} className='btn btn-outline-danger me-2'>Delete</button>
+                      <button className='btn btn-outline-success'>Edit</button>
                     </tr>
                   ))}
               </tbody>

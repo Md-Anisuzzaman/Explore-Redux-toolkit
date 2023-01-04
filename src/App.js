@@ -32,7 +32,7 @@ const App = () => {
           <Route path="product" element={<ProductLayout/>}>
             <Route index element={<ProductAll />} />
             <Route path="create" element={<ProductCreate />} />
-            <Route path="edit" element={<ProductUpdate/>} />
+            <Route path="edit/:id" element={<ProductUpdate/>} />
             <Route path="details" element={<ProductDetails />} />
           </Route>
         </Route>

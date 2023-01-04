@@ -15,6 +15,7 @@ const Create = () => {
 
   return (
     <>
+      <h3 className='mb-5'>Product Create</h3>
       <form onSubmit={handleSubmit} className='w-50 mx-auto'>
         <div className="form-group">
           <label htmlFor="product-name">Product Name</label>

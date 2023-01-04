@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
-import {useEffect} from "react"
+import { useEffect } from "react"
 import { Link, useNavigate } from 'react-router-dom'
-import { login, loginAsync, usersAsync } from '../../Features/Auth/authSlice';
+import { login } from '../../Features/Auth/authenticationSlice'
 
 
 const Login = () => {
@@ -10,19 +10,11 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    useEffect(() => {
-
-        if (isLogin) {
-            navigate("/dashboard");
-        }
-
-    }, [isLogin])
-
     const handleLogin = (e) => {
         e.preventDefault();
-        dispatch(loginAsync());
-        dispatch(usersAsync());
-        // navigate("/dashboard");
+        let formData = new FormData(e.target)
+        dispatch(login(formData))
+        navigate("/dashboard");
     };
 
     return (
@@ -43,7 +35,7 @@ const Login = () => {
                                     <Link to="/login" className="active">Login</Link>
                                     <Link to="/register">Register</Link>
                                 </div>
-                                <form onSubmit={(e) => handleLogin(e)}>
+                                <form onSubmit={handleLogin}>
                                     <input className="form-control" type="text" name="username" placeholder="E-mail Address" required />
                                     <input className="form-control" type="password" name="password" placeholder="Password" required />
                                     <div className="form-button">

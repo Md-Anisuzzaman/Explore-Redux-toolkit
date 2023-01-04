@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteProduct, getproducts } from '../../../../Features/Auth/productSlice';
 
@@ -10,14 +12,14 @@ const All = () => {
     dispatch(getproducts());
   }, [dispatch])
 
-  const handleDelete = (id) => {
-    dispatch(deleteProduct(id));
-    // dispatch(getproducts());
-
+  const handleDelete = async (id) => {
+    if (window.confirm("Confirm Delete")) {
+      await dispatch(deleteProduct(id));
+      dispatch(getproducts());
+    }
   };
 
-
-
+  
   return (
     <div className='container'>
       <div className="card">
@@ -42,8 +44,10 @@ const All = () => {
                       <td> {product._id}</td>
                       <td>{product.model}</td>
                       <td>{product.price}</td>
-                      <button onClick={() => handleDelete(product._id)} className='btn btn-outline-danger me-2'>Delete</button>
-                      <button className='btn btn-outline-success'>Edit</button>
+                      <td>
+                        <button onClick={() => handleDelete(product._id)} className='btn btn-outline-danger me-2'>Delete</button>
+                        <Link to={`/dashboard/product/edit/${product._id}`} className='btn btn-outline-success'>Edit</Link>
+                      </td>
                     </tr>
                   ))}
               </tbody>

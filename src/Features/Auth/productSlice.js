@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     products: [],
+    product: {},
     isLoading: false,
     isError: false,
     error: "",
@@ -22,18 +23,27 @@ export const addProduct = createAsyncThunk("products/addproduct", async (formDat
     })
     return await res.json();
 });
+export const editProduct = createAsyncThunk("products/editProduct", async (formData) => {
+    const res = await fetch("http://localhost:8000/editProduct", {
+        method: 'POST',
+        headers: {
+        },
+        body: formData,
+    })
+    return await res.json();
+});
+
+export const getProduct = createAsyncThunk("products/getProduct", async (id) => {
+    const res = await fetch(`http://localhost:8000/singleProduct/${id}`)
+    return await res.json();
+});
 
 export const deleteProduct = createAsyncThunk("products/deleteProduct", async (id) => {
     const res = await fetch(`http://localhost:8000/product-delete/${id}`, {
         method: 'DELETE',
     })
     await res.json();
-
-    let data = await getproducts();
-    data = await data.json();
-
-    return data;
-
+    // return 1;
 });
 
 
@@ -42,12 +52,10 @@ const productSlice = createSlice({
     name: "products",
     initialState,
     extraReducers: (builder) => {
-
         builder.addCase(getproducts.pending, (state, Action) => {
             state.isLoading = true;
         })
         builder.addCase(getproducts.fulfilled, (state, action) => {
-            // console.log(action.payload);
             state.products = action.payload;
             state.isLoading = false;
             state.isError = false;
@@ -78,18 +86,19 @@ const productSlice = createSlice({
             state.isLoading = true;
         })
         builder.addCase(deleteProduct.fulfilled, (state, action) => {
-            console.log(action.payload);
             state.isLoading = false;
             state.isError = false;
-            // state.products = state.products.filter((product) => product._id !== action.payload.meta.arg);
-            state.products = action.payload
         })
         builder.addCase(deleteProduct.rejected, (state, action) => {
             state.isLoading = false
             state.isError = true
             state.error = action.error?.message
         });
-
+        builder.addCase(getProduct.fulfilled, (state, action) => {
+            state.product = action.payload;
+            state.isLoading = false;
+            state.isError = false;
+        });
     },
 });
 

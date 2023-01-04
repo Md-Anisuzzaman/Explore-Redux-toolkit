@@ -100,7 +100,7 @@ const LeftSidebar = () => {
                                     <div>
                                         <i className="far fa-circle" />
                                         <span className="hide-menu">
-                                           Product Management
+                                            Product Management
                                             <span className="badge rounded-pill bg-cyan ms-auto">
                                                 4
                                             </span>
@@ -113,9 +113,6 @@ const LeftSidebar = () => {
                                     </li>
                                     <li>
                                         <Link to="/dashboard/product/create">Product Create </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/dashboard/product/edit">Product Edit</Link>
                                     </li>
                                     <li>
                                         <Link to="/dashboard/product/details">Product Details </Link>

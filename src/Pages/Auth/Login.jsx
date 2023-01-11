@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../../Features/Auth/authenticationSlice'
 
@@ -36,14 +35,14 @@ const Login = () => {
                                     <Link to="/register">Register</Link>
                                 </div>
                                 <form onSubmit={handleLogin}>
-                                    <input className="form-control" type="text" name="username" placeholder="E-mail Address" required />
+                                    <input className="form-control" type="email" name="username" placeholder="E-mail Address" required />
                                     <input className="form-control" type="password" name="password" placeholder="Password" required />
                                     <div className="form-button">
                                         <button id="submit" type="submit" className="ibtn">Login</button> <a href="forget3.html">Forget password?</a>
                                     </div>
                                 </form>
                                 <div className="other-links">
-                                    <span>Or login with</span><a href="#"><i className="fab fa-facebook-f" /></a><a href="#"><i className="fab fa-google" /></a><a href="#"><i className="fab fa-linkedin-in" /></a>
+                                    <span>Or login with</span><Link href="#"><i className="fab fa-facebook-f" /></Link><Link href="#"><i className="fab fa-google" /></Link><Link href="#"><i className="fab fa-linkedin-in" /></Link>
                                 </div>
                             </div>
                         </div>

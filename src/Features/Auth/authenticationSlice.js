@@ -10,6 +10,17 @@ export const login = createAsyncThunk("auth/login", async (formData) => {
     return await res.json();
 });
 
+export const register = createAsyncThunk("auth/register ", async (formData) => {
+    const res = await fetch("http://localhost:8000/register", {
+        method: 'POST',
+        headers: {
+        },
+        body: formData,
+    })
+    let result = await res.json()
+    return result;
+});
+
 const authSlice = createSlice({
     name: 'auth',
     initialState: {

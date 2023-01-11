@@ -1,19 +1,21 @@
 import React from 'react'
-import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { useDispatch} from 'react-redux';
+
+import { Link, useNavigate } from 'react-router-dom'
+import { register } from '../../Features/Auth/authenticationSlice';
 
 const Register = () => {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [allInput, setAllInput] = useState([]);
+    // const { isLogin } = useSelector((state) => state.auth)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault();
-        const newInput = { name: name, email: email, password: password };
-        setAllInput([...allInput, newInput])
-    }
+        let formData = new FormData(e.target)
+        dispatch(register(formData))
+        navigate("/dashboard");
+    };
 
     return (
         <>
@@ -41,17 +43,18 @@ const Register = () => {
                                         <Link to="/login">Login</Link>
                                         <Link to="/register" className="active">Register</Link>
                                     </div>
-                                    <form onSubmit={handleSubmit}>
-                                        <input onChange={(e) => setName(e.target.value)} className="form-control" type="text" name="name" placeholder="Full Name" value={name} required />
-                                        <input onChange={(e) => setEmail(e.target.value)} className="form-control" type="email" name="email" placeholder="E-mail Address" value={email} required />
-                                        <input onChange={(e) => setPassword(e.target.value)} className="form-control" type="password" name="password" placeholder="Password" value={password} required />
+                                    <form onSubmit={handleRegister}>
+                                        <input className="form-control" type="text" name="name" placeholder="User Name" required />
+                                        <input className="form-control" type="email" name="email" placeholder="E-mail Address" required />
+                                        <input className="form-control" type="password" name="password" placeholder="Password" required />
                                         <div className="form-button">
                                             <button id="submit" type="submit" className="ibtn">Register</button>
                                         </div>
                                     </form>
                                     <div className="other-links">
-                                        <span>Or register with</span><a href="#"><i className="fab fa-facebook-f" /></a><a href="#"><i className="fab fa-google" /></a><a href="#"><i className="fab fa-linkedin-in" /></a>
-                                    </div>
+                                        <p>Or register with</p><Link href="#"><i className="fab fa-facebook-f" /></Link><Link href="#"><i className="fab fa-google" /></Link><Link href="#"><i className="fab fa-linkedin-in" /></Link>
+                                    </div> <br />
+                                    <Link className="fs-5" to="login"  >Already registerd? please login..</Link>
                                 </div>
                             </div>
                         </div>

@@ -34,13 +34,13 @@ const All = () => {
               <tbody>
                 {
                   users.map(user => (
-                    <tr key={user.id}>
-                      <td>{user.id}</td>
+                    <tr key={user._id}>
+                      <td>{user._id}</td>
                       <td>{user.name}</td>
-                      <td>${user.email}</td>
+                      <td>{user.email}</td>
                       <td>
-                        <button onClick={deleteuser} className='btn btn-outline-danger me-2'>Delete</button>
-                        <button className='btn btn-outline-warning'>Edit</button>
+                        <button className='btn btn-outline-info me-2'>Set Role</button>
+                        <button onClick={deleteuser} className='btn btn-outline-danger'>Delete</button>
                       </td>
                     </tr>
                   ))}

@@ -8,13 +8,10 @@ const initialState = {
 };
 
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users")
+    const res = await fetch("http://localhost:8000/allusers")
     const data = await res.json();
-    // console.log("hello",data);
     return data;
 });
-
-
 
 const userSlice = createSlice({
     name: "users",

@@ -54,7 +54,7 @@ const Register = () => {
                                     <div className="other-links">
                                         <p>Or register with</p><Link href="#"><i className="fab fa-facebook-f" /></Link><Link href="#"><i className="fab fa-google" /></Link><Link href="#"><i className="fab fa-linkedin-in" /></Link>
                                     </div> <br />
-                                    <Link className="fs-5" to="login"  >Already registerd? please login..</Link>
+                                    <Link className="fs-5" to="/login"  >Already registerd? please login..</Link>
                                 </div>
                             </div>
                         </div>

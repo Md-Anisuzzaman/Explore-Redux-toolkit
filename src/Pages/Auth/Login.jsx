@@ -5,7 +5,6 @@ import { login } from '../../Features/Auth/authenticationSlice'
 
 const Login = () => {
     const { isLogin } = useSelector((state) => state.auth)
-    console.log("hello", isLogin);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

@@ -1,4 +1,7 @@
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
+import { checkLogIn } from './Features/Auth/authenticationSlice';
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
 import Dashboard from "./Pages/BackEnd/Dashboard";
@@ -11,7 +14,17 @@ import FrontEndLayout from "./Pages/Layouts/FrontEndLayout";
 
 const App = () => {
 
+  const { checkloginLoading } = useSelector((state) => state.auth)
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(checkLogIn());
+  }, [dispatch])
+
+
   return (
+    checkloginLoading ? 
     <div>
       <Routes>
         <Route path="" element={<FrontEndLayout />}>
@@ -25,19 +38,20 @@ const App = () => {
           <Route path="user" element={<UserLayout />}>
             <Route index element={<UserAll />} />
             <Route path="create" element={<UserCreate />} />
-            <Route path="edit" element={<UserUpdate/>} />
+            <Route path="edit" element={<UserUpdate />} />
             <Route path="details" element={<UserDetails />} />
           </Route>
 
-          <Route path="product" element={<ProductLayout/>}>
+          <Route path="product" element={<ProductLayout />}>
             <Route index element={<ProductAll />} />
             <Route path="create" element={<ProductCreate />} />
-            <Route path="edit/:id" element={<ProductUpdate/>} />
+            <Route path="edit/:id" element={<ProductUpdate />} />
             <Route path="details" element={<ProductDetails />} />
           </Route>
         </Route>
       </Routes>
     </div>
+    :''
   );
 };
 

@@ -1,10 +1,11 @@
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../../Features/Auth/authenticationSlice'
 
 
 const Login = () => {
-    const { isLogin } = useSelector((state) => state.auth)
+    const { authenticated } = useSelector((state) => state.auth)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -12,8 +13,15 @@ const Login = () => {
         e.preventDefault();
         let formData = new FormData(e.target)
         dispatch(login(formData))
-        navigate("/dashboard");
     };
+
+    useEffect(() => {
+        console.log(authenticated);
+        if (authenticated) {
+            navigate("/dashboard");
+        }
+    }, [authenticated, navigate])
+
 
     return (
         <>
@@ -34,8 +42,8 @@ const Login = () => {
                                     <Link to="/register">Register</Link>
                                 </div>
                                 <form onSubmit={handleLogin}>
-                                    <input className="form-control" type="email" name="username" placeholder="E-mail Address" required />
-                                    <input className="form-control" type="password" name="password" placeholder="Password" required />
+                                    <input className="form-control" type="email" name="email" defaultValue={"jhamela@gmail.com"} placeholder="E-mail Address" required />
+                                    <input className="form-control" type="password" name="password" defaultValue={"123456"} placeholder="Password" required />
                                     <div className="form-button">
                                         <button id="submit" type="submit" className="ibtn">Login</button> <a href="forget3.html">Forget password?</a>
                                     </div>

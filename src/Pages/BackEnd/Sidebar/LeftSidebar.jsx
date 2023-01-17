@@ -1,12 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import { useDispatch} from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { logout } from '../../../Features/Auth/authenticationSlice';
 
 const LeftSidebar = () => {
-
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const toggleShow = (e) => {
         e.preventDefault();
         e.currentTarget.nextElementSibling.classList.toggle('show')
     }
+    const handleLogout = async (e) => {
+        e.preventDefault();
+        window.localStorage.removeItem('token');
+        await dispatch(logout());
+        navigate("/login")
+    };
 
     return (
         <>
@@ -118,6 +126,9 @@ const LeftSidebar = () => {
                                         <Link to="/dashboard/product/details">Product Details </Link>
                                     </li>
                                 </ul>
+                            </li>
+                            <li className='text-center'>
+                                <button onClick={handleLogout} className='w-50 btn btn-primary'>LogOut</button>
                             </li>
                         </ul>
                     </nav>
